@@ -1,4 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 use coop\app\Db;
-new Db();
+$db = new Db;
+$news = $db->query("SELECT * FROM news");
+print_r($news);
