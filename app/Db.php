@@ -2,8 +2,8 @@
 
 namespace coop\app;
 
-class Db {
-
+class Db
+{
   protected $pdo;
 
   public function __construct()
@@ -24,11 +24,23 @@ class Db {
 
   }
 
-  public function query($sql, $data = [])
+  public function query($sql, $data = [], $class)
   {
     $stm = $this->pdo->prepare($sql);
     $stm->execute($data);
-    return $stm->fetchAll();
+    $data = $stm->fetchAll();
+    $res = [];
+    foreach($data as $row){
+      $item = new $class;
+      foreach($row as $key => $val){
+        if(is_numeric($key)){
+          continue;
+        }
+        $item->$key = $val;
+      }
+      $res[] = $item;
+    }
+    return $res;
   }
 
 }
