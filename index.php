@@ -1,8 +1,9 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 use coop\app\models\Article;
+use coop\app\models\User;
 
-$news = Article::findAll();
+$news = User::findAll();
 
 echo "<pre>";
 print_r($news);

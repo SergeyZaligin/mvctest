@@ -1,18 +1,16 @@
 <?php
 namespace coop\app\models;
-use coop\app\Db;
+use coop\app\models\Model;
 
-class Article
+class Article extends Model
 {
   public const TABLE = 'news';
-  public $id;
   public $title;
   public $content;
   public $visible;
 
-  public static function findAll()
+  public function getModelName()
   {
-    $db = new Db();
-    return $db->query("SELECT * FROM " . self::TABLE, [], self::class);
+    return true;
   }
 }
