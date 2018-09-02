@@ -28,19 +28,7 @@ class Db
   {
     $stm = $this->pdo->prepare($sql);
     $stm->execute($data);
-    $data = $stm->fetchAll();
-    $res = [];
-    foreach($data as $row){
-      $item = new $class;
-      foreach($row as $key => $val){
-        if(is_numeric($key)){
-          continue;
-        }
-        $item->$key = $val;
-      }
-      $res[] = $item;
-    }
-    return $res;
+    return $stm->fetchAll(\PDO::FETCH_CLASS, $class);
   }
 
 }
