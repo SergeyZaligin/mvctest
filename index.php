@@ -2,8 +2,7 @@
 require __DIR__ . '/vendor/autoload.php';
 use coop\app\models\Article;
 
-$article = new Article();
-$news = $article->findAll();
+$news = Article::findAll();
 
 echo "<pre>";
 print_r($news);
