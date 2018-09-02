@@ -1,0 +1,16 @@
+{
+  "name": "sergey/coop.loc",
+  "description": "testoopmvs",
+  "authors": [
+    {
+      "name": "Sergey Zaligin",
+      "email": "webdevjsphp@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "coop\\app\\": "app/"
+    }
+  },
+  "require": {}
+}

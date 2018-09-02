@@ -1,7 +1,8 @@
 <?php
-namespace App;
 
-class Db{
+namespace coop\app;
+
+class Db {
 
   protected $db;
 
