@@ -2,16 +2,19 @@
 require __DIR__ . '/vendor/autoload.php';
 use coop\app\models\Article;
 use coop\app\models\User;
+use coop\app\View;
 
-$news = User::findAll();
-$article = new Article();
+$view = new View();
 
-$article->title = "Новый тайтл";
-$article->content = "Новый контент";
-$article->visible = 1;
+$articles = Article::findAll();
 
-$article->insert();
+$view->assign('articles', $articles);
 
-echo "<pre>";
-print_r($article);
-echo "</pre>";
+
+$view->display(__DIR__ . '/templates/index.php');
+
+// $article->insert();
+//
+// echo "<pre>";
+// print_r($article);
+// echo "</pre>";
