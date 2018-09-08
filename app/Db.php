@@ -31,4 +31,15 @@ class Db
     return $stm->fetchAll(\PDO::FETCH_CLASS, $class);
   }
 
+  public function execute($sql, $data = [])
+  {
+    $stm = $this->pdo->prepare($sql);
+    return $stm->execute($data);
+  }
+
+  public function getLastId()
+  {
+    return $this->pdo->lastInsertId();
+  }
+
 }

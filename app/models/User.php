@@ -1,6 +1,5 @@
 <?php
 namespace coop\app\models;
-use coop\app\models\Model;
 
 class User extends Model
 {
@@ -14,5 +13,5 @@ class User extends Model
   {
     return true;
   }
-  
+
 }

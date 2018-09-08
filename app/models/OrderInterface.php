@@ -1,7 +1,7 @@
 <?php
 namespace coop\app\models;
 
-interface OrderInterface
+interface OrderInterface extends OrderInteface
 {
-  public function getPrice();
+  public function getTitle();
 }
