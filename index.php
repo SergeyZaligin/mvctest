@@ -6,10 +6,7 @@ use coop\app\View;
 
 $view = new View();
 
-$articles = Article::findAll();
-
-$view->assign('articles', $articles);
-
+$view->articles = Article::findAll();
 
 $view->display(__DIR__ . '/templates/index.php');
 
