@@ -11,7 +11,7 @@
     <?php foreach($this->articles as $article) : ?>
       <article class="article">
         <h2>
-          <a href="/article.php?id=<?=$article->id?>">
+          <a href="/?ctrl=Article&id=<?=$article->id?>">
             <?=$article->title?>
           </a>
         </h2>

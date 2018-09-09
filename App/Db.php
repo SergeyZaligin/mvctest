@@ -8,7 +8,7 @@ class Db
 
   public function __construct()
   {
-    $config = (include __DIR__ . '/../config.php')['db'];
+    $config = (include __DIR__ . '/config.php')['db'];
     try {
       $this->pdo = new \PDO(
         "mysql:host={$config['host']};dbname={$config['dbname']}",

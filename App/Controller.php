@@ -16,7 +16,7 @@ abstract class Controller
   {
     return true;
   }
-
+  
   public function __invoke()
   {
     if($this->access()){
