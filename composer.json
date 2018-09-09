@@ -9,7 +9,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "coop\\app\\": "app/"
+      "coop\\App\\": "App/"
     }
   },
   "require": {}

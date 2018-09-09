@@ -1,6 +1,6 @@
 <?php
-namespace coop\app\models;
-use coop\app\Db;
+namespace coop\App;
+use coop\App\Db;
 
 abstract class Model
 {
@@ -14,6 +14,14 @@ abstract class Model
     $db = new Db();
     $sql = "SELECT * FROM " . static::TABLE;
     return $db->query($sql, [], static::class);
+  }
+
+  public static function findOneById($id)
+  {
+    $db = new Db();
+    $sql = "SELECT * FROM " . static::TABLE . " WHERE id=:id";
+    $data = $db->query($sql, [":id" => $id], static::class);
+    return $data ? $data[0] : null;
   }
 
   public function insert($value='')

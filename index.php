@@ -1,8 +1,8 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-use coop\app\models\Article;
-use coop\app\models\User;
-use coop\app\View;
+use coop\App\Models\Article;
+use coop\App\Models\User;
+use coop\App\View;
 
 $view = new View();
 

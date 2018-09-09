@@ -8,9 +8,13 @@
 </head>
 <body>
   <?php if($this->articles) : ?>
-    <?php foreach($this->data['articles'] as $article) : ?>
+    <?php foreach($this->articles as $article) : ?>
       <article class="article">
-        <h2><?=$article->title?></h2>
+        <h2>
+          <a href="/article.php?id=<?=$article->id?>">
+            <?=$article->title?>
+          </a>
+        </h2>
         <p><?=$article->content?></p>
       </article>
       <hr>

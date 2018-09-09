@@ -1,5 +1,6 @@
 <?php
-namespace coop\app\models;
+namespace coop\App\Models;
+use coop\App\Model;
 
 class Article extends Model
 {

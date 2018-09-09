@@ -1,5 +1,5 @@
 <?php
-namespace coop\app\models;
+namespace coop\App\Models;
 
 interface OrderInterface extends OrderInteface
 {
