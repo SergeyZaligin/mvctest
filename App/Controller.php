@@ -12,6 +12,19 @@ abstract class Controller
     $this->view = new View();
   }
 
-  abstract public function __invoke();
+  protected function access(): bool
+  {
+    return true;
+  }
 
+  public function __invoke()
+  {
+    if($this->access()){
+      $this->handle();
+    }else{
+      die('Нет доступа');
+    }
+  }
+
+  abstract protected function handle();
 }

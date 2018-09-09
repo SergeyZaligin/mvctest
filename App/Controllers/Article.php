@@ -6,7 +6,13 @@ use coop\App\Controller;
 
 class Article extends Controller
 {
-  public function __invoke()
+
+  protected function access(): bool
+  {
+    return isset($_GET['name']) && 'admin' == $_GET['name'];
+  }
+
+  protected function handle()
   {
     $this->view->article = \coop\App\Models\Article::findOneById($_GET['id']);
     $this->view->display(__DIR__ . '/../../templates/article.php');
