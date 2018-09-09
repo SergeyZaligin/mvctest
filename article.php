@@ -1,11 +1,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-use coop\App\Models\Article;
-use coop\App\Models\User;
-use coop\App\View;
+use coop\App\Controllers\Article;
 
-$view = new View();
+$ctrl = new Article();
 
-$view->article = Article::findOneById($_GET['id']);
-
-$view->display(__DIR__ . '/templates/article.php');
+$ctrl();

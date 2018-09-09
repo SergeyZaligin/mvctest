@@ -1,6 +1,6 @@
 <?php
 
-namespace coop\app;
+namespace coop\App;
 
 /**
  * @property array $data

@@ -1,17 +1,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-use coop\App\Models\Article;
-use coop\App\Models\User;
-use coop\App\View;
+use coop\App\Controllers\Index;
 
-$view = new View();
+$ctrl = new Index();
 
-$view->articles = Article::findAll();
-
-$view->display(__DIR__ . '/templates/index.php');
-
-// $article->insert();
-//
-// echo "<pre>";
-// print_r($article);
-// echo "</pre>";
+$ctrl();
